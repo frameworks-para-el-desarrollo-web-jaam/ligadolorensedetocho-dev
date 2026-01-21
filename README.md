@@ -1,16 +1,34 @@
-# React + Vite
+# ligadolorensedetocho-dev 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Autor
+Juan Abel Anzo Méndez
 
-Currently, two official plugins are available:
+## Descripcion
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta es un desarrollo web basado en React para mostrar el sitio web de una liga deportiva de flag football
+ ## Contexto y Justificación del Proyecto
+ Una liga deportiva de flagfootball quiere ofrecer a sus usuarios un sitio web donde puedan estar públicas las plantillas de jugadores de cada equipo. Las planillas cambian con cada temporada(cada seis meses), algunos equipos se desacen otros nuevos se conforman. Usaremos react para entregar dos flujos diferentes, un flujo de administrador que permita el CRUD de los equipos y jugadores y otro flujo para la vista del cliente.
 
-## React Compiler
+ ## Requerimientos Funcionales
+> * RF1: Navegar entre equipos filtrando por nombre de equipo, categoría, o nombre de jugador.
+> * RF2: El Administrador debe ser capaz de agregar, eliminar, consultar y actualizar datos en planillas de equipos y jugadores.
+> * RF3: Visualizar el listado de equipos junto con sul logo y las fotos de los jugadores
+> * RF4: Cambiar entre modos de visualización para vistas de carrusel y listado.
+> * RF5: Acceder a un Login para el administrador de la liga.
+> * RF6 Barrar de navegación para navegar entre EQUIPOS, JUGADORES, CALENDARIOS, CONTACTO
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+##Requerimientos no funcionales.
+> * El sistema debe contar con animaciones al desplazarse entre fotos dentro del carrusel
+> * El sitema depe ser responsivol y desplegarse con flex en móbiles y escritorios
+> * El fondo de pantalla debe cambiar de color en relación con los colores del Equipo.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#Tecnológias y Herramientas del Ecosistema
+> ### Manejo de estado Global
+>  Se elegió react por la simplicidad que tiene para implementarse en desarrollos pequeños y el buen respaldo de la comunidad de desarrolladores.
+> ### Manejo de los Datos
+>  Axios es el encargado de consumir las peticiones del forntend por la buena relación que tiene con react y su ompatibilidad con NodeJS
+> ### Estilizado
+> Tailwind es el elegido por su rapidez en el desarrollo, ya que ofrece clases utilitarias predefinidas que permiten construir interfaces de usuario más agiles.
+> ### Despliegue
+> Se elecciono Vercel como plataforma para el despliegue debido a su integracion nativa con React lo que facilita la publicación de la aplicación. Ademásd e que ofrece despliegues automaticos viculados a repositorios de Git.
+> Para despliegues locales y pruebas se utilizará Docker
