@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "motion/react";
 
-const MenuResponsivo = ({open, navbarLinks}) => {
+const MenuResponsivo = ({open, navbarLinks, onClose}) => {
     const animacion = {
         initial : { opacity: 0, y: -100 },
         animate: { opacity: 1, y: -100 },
@@ -11,11 +11,11 @@ const MenuResponsivo = ({open, navbarLinks}) => {
         <AnimatePresence mode="await">
         {
             open && (
-                <motion.div {...animacion} className="absolute top-20 left-0 w-full h-screen z-20">
-                    <div className="text-xl font seminold uppercase bg-primary text-white rounded-md py-7 m-6">
+                <motion.div {...animacion} className="absolute top-20 left-0 w-full h-screen z-20" onClick={onClose}>
+                    <div className="text-xl font-semibold uppercase bg-primary text-white rounded-b-md py-7 m-6" onClick={(e) => e.stopPropagation()}>
                         <ul className="flex flex-col justify-center items-center gap-10">
                             {navbarLinks.map((item) =>(
-                                <li key={item.id}>{item.title}</li>
+                                <li key={item.id} onClick={onClose}>{item.title}</li>
                             ))}
                         </ul>
                     </div>
@@ -23,7 +23,6 @@ const MenuResponsivo = ({open, navbarLinks}) => {
 
             )
         }
-        
         </AnimatePresence>
     );
 };

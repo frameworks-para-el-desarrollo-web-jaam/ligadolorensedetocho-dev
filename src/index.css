@@ -4,6 +4,8 @@
     --color-primary: #ff8901;
     --color-secondary: #fb923c;
     
+    --color-liga-1: oklch(0.95 0 4) ;
+    --color-liga-2: oklch(0.27 0.04 219 / 86%);
     --container-center: true;
     --container-padding: 1rem;      
 }

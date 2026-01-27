@@ -13,20 +13,16 @@ const Navbar = () => {
     //Usar la clase container me generaba problemas con el flex, así que decidi no agregarla
     return(
         <>
-            <nav >
-                <MenuResponsivo open={abierto} navbarLinks={navbarLinks}/>
+            <nav className="bg-white">
                 <div className='px-2 flex justify-between font-bold items-center py-8'>
                     {
                         //SECCIONLOGO
-                       <div className='text-2xl flex items-center gap-2 uppercase'>
+                       <div className="flex">
+                            <div className='text-2xl flex items-center gap-2 uppercase'>  
                             <ImBooks />
-                            <p>El Stio de JAAM</p>
-
-                       </div>
-                    }
-                    {
-                        //SECCIÓN MENÚ
-                        <div className="hidden md:block">
+                            <p>ligadolorensedetocho</p>
+                            </div>
+                            <div className="hidden md:block">
                             <ul className="flex items-center gap-7 text-gray-600">
                                 {navbarLinks.map((item) =>(
                                     <li key={item.id}>
@@ -37,8 +33,8 @@ const Navbar = () => {
                                     </li>
                                 ))}
                             </ul>
+                            </div>
                         </div>
-        
                     }
                     {
                         <div className="flex items-center gap-4">
@@ -57,13 +53,14 @@ const Navbar = () => {
                     }
                     {
                         <div className="md:hidden">
-                            <MdMenu onClick={ () => setAbierto(!abierto)} className="text-4xl"/>
+                            <MdMenu onClick={ () => setAbierto(!abierto)} className="text-4xl" />
 
                         </div>
 
                     }
                 </div>
             </nav>
+            <MenuResponsivo open={abierto} navbarLinks={navbarLinks} onClose={() => setAbierto(false)}/>
         </>
         
     )
